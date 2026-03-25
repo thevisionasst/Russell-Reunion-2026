@@ -39,9 +39,10 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--navy);o
 .countdown div{background:rgba(255,255,255,.1);border:1px solid rgba(226,185,106,.4);border-radius:14px;padding:10px 16px;min-width:70px;} 
 .countdown span{display:block;font-size:1.6rem;font-weight:800;color:var(--gold);} 
 .countdown small{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--foam);} 
+
 .hero-location{margin-bottom:22px;position:relative;z-index:1;} 
 .hero-location .badge{display:inline-block;} 
-  
+
 /* ====================================================== 
   DIVIDERS 
 ====================================================== */ 
@@ -161,9 +162,9 @@ footer .tagline-footer{font-family:'Libre Baskerville',serif;font-style:italic;c
    <span class="badge">📅 May 22, 2026</span> 
    <span class="sep">—</span> 
    <span class="badge">May 24, 2026</span> 
-   </div> 
+ </div> 
  <div class="hero-location"><span class="badge">📍 Tifton, GA</span></div> 
-
+ 
  <!-- COUNTDOWN TIMER (updates via JavaScript) --> 
  <div class="countdown" id="countdown"> 
    <div><span id="cd-days">0</span><small>Days</small></div> 
@@ -196,17 +197,50 @@ footer .tagline-footer{font-family:'Libre Baskerville',serif;font-style:italic;c
  <div class="container"> 
    <p class="section-label">Our Venues</p> 
    <h2 class="section-title">Three <span>Amazing Spots</span></h2> 
-  <div class="venue-card"> 
-     <div class="venue-img-wrap"> 
-       <img src="images/WmsOrchardSign.jpg" alt="William's Orchard sign" loading="lazy"/> 
-       <div class="overlay"></div> 
+ 
+   <div class="venue-grid"> 
+ 
+     <!-- Fulwood Park (Friday) - local image --> 
+     <div class="venue-card"> 
+       <div class="venue-img-wrap"> 
+         <img src="images/FulwoodPark1.jpg" alt="Fulwood Park Tifton GA" loading="lazy"/> 
+         <div class="overlay"></div> 
+       </div> 
+       <div class="venue-info"> 
+         <p class="venue-day">🐟 Friday · May 22</p> 
+         <h3 class="venue-name">Fulwood Park</h3> 
+         <p class="venue-desc">A beloved Tifton city park with sweeping shade trees and open pavilions — perfect for our Friday night fish fry kickoff.</p> 
+       </div> 
      </div> 
-     <div class="venue-info"> 
-       <p class="venue-day">🍖 Saturday · May 23</p> 
-       <h3 class="venue-name">William's Orchard</h3> 
-       <p class="venue-desc">A stunning renovated venue blending timeless elegance with open orchard beauty — our big day for cookout, games & family photos.</p> 
+ 
+     <!-- William's Orchard (Saturday) - local image --> 
+     <div class="venue-card"> 
+       <div class="venue-img-wrap"> 
+         <img src="images/WmsOrchardSign.jpg" alt="William's Orchard sign" loading="lazy"/> 
+         <div class="overlay"></div> 
+       </div> 
+       <div class="venue-info"> 
+         <p class="venue-day">🍖 Saturday · May 23</p> 
+         <h3 class="venue-name">William's Orchard</h3> 
+         <p class="venue-desc">A stunning renovated venue blending timeless elegance with open orchard beauty — our big day for cookout, games & family photos.</p> 
+       </div> 
      </div> 
+ 
+     <!-- Church (Sunday) - local image --> 
+     <div class="venue-card"> 
+       <div class="venue-img-wrap"> 
+         <img src="images/MtZionChurch.jpg" alt="Mt. Zion Missionary Baptist Church" loading="lazy"/> 
+         <div class="overlay"></div> 
+       </div> 
+       <div class="venue-info"> 
+         <p class="venue-day">🙏 Sunday · May 24</p> 
+         <h3 class="venue-name">Mt. Zion Missionary Baptist Church</h3> 
+         <p class="venue-desc">We close the weekend with a warm Sunday farewell brunch — good food, full hearts, and love to send everyone safely home.</p> 
+       </div> 
+     </div> 
+ 
    </div> 
+ 
  </div> 
 </section> 
 <div class="rope-line"></div> 
@@ -235,7 +269,7 @@ footer .tagline-footer{font-family:'Libre Baskerville',serif;font-style:italic;c
      <div class="day-card"> 
        <p class="day-label">Day 3 · Sunday</p> 
        <h3>May 24 — Sunday Brunch</h3> 
-       <div class="event-item"><span class="dot"></span><span>Farewell Brunch at <strong>[Church Name]</strong></span></div> 
+       <div class="event-item"><span class="dot"></span><span>Farewell Brunch at <strong>Mt. Zion Missionary Baptist Church</strong></span></div> 
        <div class="event-item"><span class="dot"></span><span>Send-off with love & full bellies</span></div> 
      </div> 
    </div> 
@@ -251,11 +285,9 @@ footer .tagline-footer{font-family:'Libre Baskerville',serif;font-style:italic;c
    <p class="section-label">Where to Stay</p> 
    <h2 class="section-title">Host <span>Hotel</span></h2> 
    <div class="hotel-card"> 
-     <img src="https://images.trvl-media.com/lodging/9000000/8660000/8659100/8659052/e79ac3b0.jpg" 
-          onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80'" 
-          alt="La Quinta Inn Tifton GA" loading="lazy"/> 
+     <img src="images/LaQuintaTifton.jpg" alt="LaQuinta Inn & Suites by Wyndham Tifton" loading="lazy"/> 
      <div class="hotel-card-body"> 
-       <h3>La Quinta Inn & Suites — Tifton, GA</h3> 
+       <h3>LaQuinta Inn & Suites by Wyndham Tifton</h3> 
        <p>Our official host hotel for out-of-town family. Conveniently located off I-75, close to all our venues, with comfortable rooms for the whole crew.</p> 
        <p class="note">📞 Mention "Russell Family Reunion" when booking for group rates!</p> 
      </div> 
