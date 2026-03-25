@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Russell Family Reunion 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital@0;1&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy:#0a1f3c; --deep:#071429; --ocean:#1a4a7a; --sky:#2e7db5;
+  --foam:#e8f4f8; --sand:#f5efe6; --rope:#c9a96e; --gold:#e2b96a;
+  --white:#ffffff; --cream:#fdf9f4;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--navy);overflow-x:hidden;}
+
+/* HERO */
+.hero{background:var(--navy);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 20px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(46,125,181,.25) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(26,74,122,.3) 0%,transparent 60%);}
+.anchor-icon{font-size:3rem;margin-bottom:16px;animation:float 4s ease-in-out infinite;position:relative;z-index:1;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-eyebrow{font-size:.85rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;position:relative;z-index:1;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;color:var(--white);line-height:1.05;position:relative;z-index:1;text-shadow:0 4px 24px rgba(0,0,0,.3);}
+.hero h1 span{color:var(--gold);font-style:italic;}
+.hero-tagline{font-family:'Libre Baskerville',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.35rem);color:var(--foam);margin:18px 0 36px;position:relative;z-index:1;opacity:.9;}
+.hero-dates{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;margin-bottom:40px;}
+.hero-dates .badge{background:rgba(255,255,255,.1);border:1px solid rgba(226,185,106,.4);border-radius:50px;padding:8px 20px;font-size:.9rem;color:var(--foam);font-weight:600;backdrop-filter:blur(6px);}
+.hero-dates .sep{color:var(--gold);font-size:1.2rem;}
+.btn-primary{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:1rem;letter-spacing:.05em;text-transform:uppercase;padding:16px 40px;border-radius:50px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 6px 24px rgba(226,185,106,.35);position:relative;z-index:1;}
+.btn-primary:hover{background:var(--white);transform:translateY(-2px);}
+
+/* DIVIDERS */
+.rope-line{height:8px;background:repeating-linear-gradient(90deg,var(--rope) 0,var(--rope) 16px,var(--gold) 16px,var(--gold) 32px);opacity:.6;}
+.nautical-divider{text-align:center;padding:10px 0;font-size:1.4rem;letter-spacing:.5em;color:var(--rope);opacity:.6;}
+
+/* SECTIONS */
+section{padding:80px 20px;}
+.container{max-width:960px;margin:0 auto;}
+.section-label{font-size:.78rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--sky);margin-bottom:10px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--navy);margin-bottom:20px;line-height:1.2;}
+.section-title span{color:var(--sky);font-style:italic;}
+
+/* ABOUT */
+.about{background:var(--cream);text-align:center;}
+.about p{font-size:1.1rem;line-height:1.8;color:#3a4a5c;max-width:680px;margin:0 auto 16px;}
+
+/* VENUE GALLERY */
+.venues{background:var(--navy);padding:80px 20px;}
+.venues .section-label{color:var(--gold);}
+.venues .section-title{color:var(--white);}
+.venues .section-title span{color:var(--gold);}
+.venue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+.venue-card{border-radius:20px;overflow:hidden;background:rgba(255,255,255,.05);border:1px solid rgba(226,185,106,.2);transition:transform .3s,border-color .3s;}
+.venue-card:hover{transform:translateY(-6px);border-color:var(--gold);}
+.venue-img-wrap{width:100%;height:220px;overflow:hidden;position:relative;background:#0d2a4a;}
+.venue-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:brightness(.88) saturate(1.1);}
+.venue-card:hover .venue-img-wrap img{transform:scale(1.06);}
+.venue-img-wrap .overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(7,20,41,.8) 100%);}
+.venue-info{padding:20px;}
+.venue-day{font-size:.7rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.venue-name{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--white);margin-bottom:8px;}
+.venue-desc{font-size:.88rem;color:var(--foam);opacity:.8;line-height:1.6;}
+
+/* FEATURED VENUE (wide card) */
+.venue-grid-tall{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;margin-top:24px;}
+.venue-card-tall .venue-img-wrap{height:320px;}
+
+/* SCHEDULE */
+.schedule{background:var(--foam);}
+.schedule-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:40px;}
+.day-card{background:var(--white);border:2px solid rgba(46,125,181,.2);border-radius:16px;padding:28px 24px;transition:transform .3s,border-color .3s;}
+.day-card:hover{transform:translateY(-4px);border-color:var(--sky);}
+.day-label{font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sky);margin-bottom:6px;}
+.day-card h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:14px;}
+.event-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.92rem;color:#3a4a5c;line-height:1.5;}
+.event-item .dot{width:7px;height:7px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:6px;}
+
+/* HOTEL */
+.hotel{background:var(--sand);text-align:center;}
+.hotel-card{background:var(--white);border:2px solid var(--sky);border-radius:20px;padding:0;max-width:580px;margin:32px auto 0;box-shadow:0 8px 32px rgba(10,31,60,.08);overflow:hidden;}
+.hotel-card img{width:100%;height:200px;object-fit:cover;}
+.hotel-card-body{padding:28px 32px;}
+.hotel-card h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--navy);margin-bottom:8px;}
+.hotel-card p{color:#5a6a7c;font-size:.95rem;line-height:1.7;}
+.hotel-card .note{margin-top:14px;font-size:.85rem;font-weight:700;color:var(--sky);}
+
+/* REGISTER */
+.register{background:var(--cream);}
+.register-intro{font-size:1.05rem;color:#4a5a6c;margin-bottom:36px;line-height:1.7;text-align:center;}
+.register-form{background:var(--white);border-radius:20px;padding:40px;max-width:720px;margin:0 auto;box-shadow:0 8px 40px rgba(10,31,60,.08);border:1px solid rgba(46,125,181,.15);}
+.form-section-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);border-bottom:2px solid var(--foam);padding-bottom:8px;margin:28px 0 16px;}
+.form-section-title:first-child{margin-top:0;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:.78rem;font-weight:700;color:var(--navy);margin-bottom:5px;letter-spacing:.04em;text-transform:uppercase;}
+.form-group input,.form-group select{width:100%;padding:11px 14px;border:2px solid #d0dce8;border-radius:10px;font-family:'Nunito',sans-serif;font-size:.93rem;color:var(--navy);background:var(--cream);transition:border-color .2s;outline:none;}
+.form-group input:focus,.form-group select:focus{border-color:var(--sky);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.form-row-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;}
+
+/* FAMILY MEMBERS */
+.member-list{display:flex;flex-direction:column;gap:16px;margin-bottom:16px;}
+.member-card{background:var(--foam);border:1px solid rgba(46,125,181,.2);border-radius:14px;padding:20px;position:relative;}
+.member-card .member-num{font-size:.72rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--sky);margin-bottom:14px;}
+.member-card .remove-btn{position:absolute;top:14px;right:16px;background:none;border:none;color:#bbb;font-size:1.1rem;cursor:pointer;transition:color .2s;}
+.member-card .remove-btn:hover{color:#c0392b;}
+.add-member-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:2px dashed var(--sky);color:var(--sky);font-family:'Nunito',sans-serif;font-weight:700;font-size:.9rem;padding:10px 20px;border-radius:10px;cursor:pointer;transition:all .2s;margin-bottom:24px;}
+.add-member-btn:hover{background:var(--foam);}
+
+/* COST BOX */
+.cost-box{background:var(--navy);color:var(--white);border-radius:16px;padding:26px 30px;margin:28px 0;}
+.cost-box h4{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold);margin-bottom:18px;}
+.cost-line{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;color:var(--foam);margin-bottom:10px;}
+.cost-line .lbl{opacity:.8;}
+.cost-line .amt{font-weight:700;}
+.cost-divider{border:none;border-top:1px solid rgba(255,255,255,.15);margin:14px 0;}
+.cost-total{display:flex;justify-content:space-between;align-items:center;}
+.cost-total .lbl{font-size:1rem;font-weight:700;color:var(--white);}
+.cost-total .amt{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--gold);font-weight:700;}
+.cost-note{font-size:.75rem;color:rgba(232,244,248,.45);margin-top:10px;}
+
+/* SUBMIT */
+.form-submit{text-align:center;margin-top:28px;}
+.btn-form{background:var(--navy);color:var(--gold);font-family:'Nunito',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.07em;text-transform:uppercase;padding:15px 44px;border-radius:50px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 18px rgba(10,31,60,.2);}
+.btn-form:hover{background:var(--ocean);transform:translateY(-2px);}
+.payment-note{margin-top:20px;font-size:.88rem;color:#7a8a9c;text-align:center;}
+.payment-note a{color:var(--sky);font-weight:700;text-decoration:none;}
+
+/* FOOTER */
+footer{background:var(--deep);color:var(--foam);text-align:center;padding:40px 20px;}
+footer .anchor{font-size:2rem;margin-bottom:12px;}
+footer p{font-size:.88rem;color:rgba(232,244,248,.6);line-height:1.8;}
+footer .tagline-footer{font-family:'Libre Baskerville',serif;font-style:italic;color:var(--gold);font-size:1rem;margin-bottom:10px;}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:800px){
+  .venue-grid,.venue-grid-tall{grid-template-columns:1fr;}
+  .form-row,.form-row-3,.form-row-4{grid-template-columns:1fr 1fr;}
+  .register-form{padding:24px 16px;}
+}
+@media(max-width:500px){
+  .form-row,.form-row-3,.form-row-4{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="anchor-icon">⚓</div>
+  <p class="hero-eyebrow">You're Invited</p>
+  <h1>Russell Family<br/><span>Reunion 2026</span></h1>
+  <p class="hero-tagline">Anchored in Love, Rooted in Family</p>
+  <div class="hero-dates">
+    <span class="badge">📅 May 22, 2026</span>
+    <span class="sep">—</span>
+    <span class="badge">May 24, 2026</span>
+    <span class="sep">·</span>
+    <span class="badge">📍 Tifton, GA</span>
+  </div>
+  <a href="#register" class="btn-primary">Register Now ⚓</a>
+</section>
+
+<div class="rope-line"></div>
+
+<!-- ABOUT -->
+<section class="about fade-up">
+  <div class="container">
+    <p class="section-label">Welcome, Family</p>
+    <h2 class="section-title">It's Time to Come <span>Home</span></h2>
+    <p>Three days. One family. Countless memories waiting to be made. Whether you're coming from down the road or across the country, we're gathering in Tifton, Georgia for food, fun, and the kind of love only family can bring.</p>
+    <p>Pack your appetite, your dancing shoes, and your best stories — the Russells are getting together and it's going to be unforgettable.</p>
+  </div>
+</section>
+
+<div class="nautical-divider">⚓ ～ ⚓ ～ ⚓</div>
+
+<!-- VENUES -->
+<section class="venues fade-up">
+  <div class="container">
+    <p class="section-label">Our Venues</p>
+    <h2 class="section-title">Three <span>Amazing Spots</span></h2>
+
+    <!-- Top row: 3 equal cards -->
+    <div class="venue-grid">
+
+      <div class="venue-card">
+        <div class="venue-img-wrap">
+          <img src="https://thinktifton.com/wp-content/uploads/sites/14/2023/10/fulwood-park.jpg"
+               onerror="this.src='https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80'"
+               alt="Fulwood Park Tifton GA" loading="lazy"/>
+          <div class="overlay"></div>
+        </div>
+        <div class="venue-info">
+          <p class="venue-day">🐟 Friday · May 22</p>
+          <h3 class="venue-name">Fulwood Park</h3>
+          <p class="venue-desc">A beloved Tifton city park with sweeping shade trees and open pavilions — perfect for our Friday night fish fry kickoff.</p>
+        </div>
+      </div>
+
+      <div class="venue-card">
+        <div class="venue-img-wrap">
+          <img src="https://images.squarespace-cdn.com/content/v1/678def914efaf402bd8f948a/89e54339-7312-4200-aed4-0478325dec3c/IMG_7373.jpg"
+               onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80'"
+               alt="Williams Orchard Tifton GA" loading="lazy"/>
+          <div class="overlay"></div>
+        </div>
+        <div class="venue-info">
+          <p class="venue-day">🍖 Saturday · May 23</p>
+          <h3 class="venue-name">William's Orchard</h3>
+          <p class="venue-desc">A stunning renovated venue blending timeless elegance with open orchard beauty — our big day for cookout, games & family photos.</p>
+        </div>
+      </div>
+
+      <div class="venue-card">
+        <div class="venue-img-wrap">
+          <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=600&q=80"
+               alt="Sunday Brunch Church" loading="lazy"/>
+          <div class="overlay"></div>
+        </div>
+        <div class="venue-info">
+          <p class="venue-day">🙏 Sunday · May 24</p>
+          <h3 class="venue-name">[Church Name]</h3>
+          <p class="venue-desc">We close the weekend with a warm Sunday farewell brunch — good food, full hearts, and love to send everyone safely home.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- William's Orchard spotlight row -->
+    <div class="venue-grid-tall" style="margin-top:24px;">
+      <div class="venue-card venue-card-tall">
+        <div class="venue-img-wrap">
+          <img src="https://images.squarespace-cdn.com/content/v1/678def914efaf402bd8f948a/d551ab08-de1d-42b1-b5a7-2c3c7f4335a8/_81A4246_websize.jpg"
+               onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80'"
+               alt="Williams Orchard barn and grounds" loading="lazy"/>
+          <div class="overlay"></div>
+        </div>
+        <div class="venue-info">
+          <p class="venue-day">✨ Saturday Spotlight</p>
+          <h3 class="venue-name">The Orchard Grounds</h3>
+          <p class="venue-desc">Rolling landscapes, a dreamy restored barn, and fruit trees as far as the eye can see. William's Orchard is where Saturday magic happens.</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <div class="venue-card" style="flex:1;">
+          <div class="venue-img-wrap" style="height:144px;">
+            <img src="https://images.squarespace-cdn.com/content/v1/678def914efaf402bd8f948a/0891633e-e3f5-4c24-bb9a-1bb001b1b8b5/paigebenecke_photography-1157.jpg"
+                 onerror="this.src='https://images.unsplash.com/photo-1471189776077-4e8e03d3e46e?w=600&q=80'"
+                 alt="Williams Orchard outdoor" loading="lazy"/>
+            <div class="overlay"></div>
+          </div>
+          <div class="venue-info" style="padding:14px 18px;">
+            <p class="venue-day">🌿 The Forest Site</p>
+            <h3 class="venue-name" style="font-size:1rem;">Natural Beauty</h3>
+          </div>
+        </div>
+        <div class="venue-card" style="flex:1;">
+          <div class="venue-img-wrap" style="height:144px;">
+            <img src="https://images.squarespace-cdn.com/content/v1/678def914efaf402bd8f948a/6fe0c966-a733-4939-8183-e828c78b845d/0J2A4409.jpg"
+                 onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80'"
+                 alt="Williams Orchard landscape" loading="lazy"/>
+            <div class="overlay"></div>
+          </div>
+          <div class="venue-info" style="padding:14px 18px;">
+            <p class="venue-day">🍎 The Orchard</p>
+            <h3 class="venue-name" style="font-size:1rem;">Games & Activities</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="rope-line"></div>
+
+<!-- SCHEDULE -->
+<section class="schedule fade-up">
+  <div class="container">
+    <p class="section-label">Weekend Lineup</p>
+    <h2 class="section-title">Three Days of <span>Good Times</span></h2>
+    <div class="schedule-grid">
+      <div class="day-card">
+        <p class="day-label">Day 1 · Friday</p>
+        <h3>May 22 — Fish Fry!</h3>
+        <div class="event-item"><span class="dot"></span><span>Fish Fry at <strong>Fulwood Park</strong></span></div>
+        <div class="event-item"><span class="dot"></span><span>Catch up, reconnect & enjoy the evening together</span></div>
+      </div>
+      <div class="day-card">
+        <p class="day-label">Day 2 · Saturday</p>
+        <h3>May 23 — The Big Day</h3>
+        <div class="event-item"><span class="dot"></span><span>Cookout at <strong>William's Orchard</strong></span></div>
+        <div class="event-item"><span class="dot"></span><span>Games & activities for all ages</span></div>
+        <div class="event-item"><span class="dot"></span><span>Family photos & good vibes all day</span></div>
+      </div>
+      <div class="day-card">
+        <p class="day-label">Day 3 · Sunday</p>
+        <h3>May 24 — Sunday Brunch</h3>
+        <div class="event-item"><span class="dot"></span><span>Farewell Brunch at <strong>[Church Name]</strong></span></div>
+        <div class="event-item"><span class="dot"></span><span>Send-off with love & full bellies</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="nautical-divider">🏨 ～ 🌊 ～ 🏨</div>
+
+<!-- HOTEL -->
+<section class="hotel fade-up">
+  <div class="container">
+    <p class="section-label">Where to Stay</p>
+    <h2 class="section-title">Host <span>Hotel</span></h2>
+    <div class="hotel-card">
+      <img src="https://images.trvl-media.com/lodging/9000000/8660000/8659100/8659052/e79ac3b0.jpg"
+           onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80'"
+           alt="La Quinta Inn Tifton GA" loading="lazy"/>
+      <div class="hotel-card-body">
+        <h3>La Quinta Inn & Suites — Tifton, GA</h3>
+        <p>Our official host hotel for out-of-town family. Conveniently located off I-75, close to all our venues, with comfortable rooms for the whole crew.</p>
+        <p class="note">📞 Mention "Russell Family Reunion" when booking for group rates!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rope-line"></div>
+
+<!-- REGISTER -->
+<section class="register fade-up" id="register">
+  <div class="container">
+    <p class="section-label" style="text-align:center">Don't Miss Out</p>
+    <h2 class="section-title" style="text-align:center">Register <span>Your Family</span></h2>
+    <p class="register-intro">
+      One person can register the whole group! Add each family member, pick shirt sizes, enter birthdays &amp; anniversaries — and watch your cost estimate calculate in real time.
+    </p>
+
+    <div class="register-form">
+
+      <!-- CONTACT -->
+      <h3 class="form-section-title">📋 Your Contact Info</h3>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="e.g. Mary"/></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="e.g. Russell"/></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(555) 000-0000"/></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>City & State</label><input type="text" placeholder="e.g. Atlanta, GA"/></div>
+        <div class="form-group">
+          <label>Hotel Accommodations?</label>
+          <select>
+            <option>Yes — I'll book at La Quinta</option>
+            <option>No — I have other arrangements</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- FAMILY MEMBERS -->
+      <h3 class="form-section-title">👨‍👩‍👧‍👦 Family Members Attending</h3>
+      <p style="font-size:.88rem;color:#5a6a7c;margin-bottom:18px;line-height:1.7;">
+        Include yourself! Add one row per person. Cost is estimated automatically based on age:<br/>
+        <strong style="color:var(--navy);">25 & older → $200 &nbsp;·&nbsp; Ages 6–24 → $25 &nbsp;·&nbsp; Under 6 → FREE 🎉</strong>
+      </p>
+
+      <div class="member-list" id="memberList"></div>
+      <button class="add-member-btn" onclick="addMember()">➕ Add Another Family Member</button>
+
+      <!-- COST CALCULATOR -->
+      <div class="cost-box">
+        <h4>⚓ Estimated Registration Cost</h4>
+        <div class="cost-line"><span class="lbl" id="adultLabel">Adults (25+): 0</span><span class="amt" id="adultCost">$0</span></div>
+        <div class="cost-line"><span class="lbl" id="youthLabel">Youth (6–24): 0</span><span class="amt" id="youthCost">$0</span></div>
+        <div class="cost-line"><span class="lbl" id="childLabel">Little Ones (under 6): 0</span><span class="amt" id="childCost">FREE</span></div>
+        <hr class="cost-divider"/>
+        <div class="cost-total">
+          <span class="lbl">Estimated Total</span>
+          <span class="amt" id="totalCost">$0</span>
+        </div>
+        <p class="cost-note">* Estimate updates as you add family members. Final amount confirmed upon review.</p>
+      </div>
+
+      <!-- MEAL -->
+      <h3 class="form-section-title">🍽️ Group Dietary Notes</h3>
+      <div class="form-group">
+        <label>Any dietary restrictions or allergies in your group?</label>
+        <input type="text" placeholder="e.g. peanut allergy, vegetarian, gluten-free — or 'none'"/>
+      </div>
+
+      <!-- SPECIAL OCCASIONS -->
+      <h3 class="form-section-title">🎉 Celebrations & Milestones</h3>
+      <p style="font-size:.88rem;color:#5a6a7c;margin-bottom:14px;line-height:1.6;">
+        Let us know about special occasions so we can celebrate together as a family!
+      </p>
+      <div class="form-group">
+        <label>Birthdays to Celebrate (Name & Date)</label>
+        <input type="text" placeholder="e.g. Grandma Ruth – May 20, Uncle James – May 24"/>
+      </div>
+      <div class="form-group">
+        <label>Anniversaries (Names, Date & Years)</label>
+        <input type="text" placeholder="e.g. John & Mary Russell – May 22 (40 years!)"/>
+      </div>
+      <div class="form-group">
+        <label>Other Milestones to Celebrate?</label>
+        <input type="text" placeholder="e.g. graduations, new babies, retirements, promotions..."/>
+      </div>
+
+      <!-- SUBMIT -->
+      <div class="form-submit">
+        <button class="btn-form">Submit Registration ⚓</button>
+      </div>
+      <p class="payment-note">
+        After registering, complete your payment here →
+        <a href="#">[Your Payment Link]</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="rope-line"></div>
+<footer>
+  <div class="anchor">⚓</div>
+  <p class="tagline-footer">Anchored in Love, Rooted in Family</p>
+  <p>Russell Family Reunion · May 22–24, 2026 · Tifton, Georgia</p>
+  <p style="margin-top:8px;">Questions? Contact your reunion organizer.</p>
+</footer>
+
+<script>
+const SHIRT_SIZES = ['YXS','YS','YM','YL','YXL','S','M','L','XL','2XL','3XL','4XL'];
+let memberCount = 0;
+
+function addMember() {
+  memberCount++;
+  const id = memberCount;
+  const list = document.getElementById('memberList');
+  const card = document.createElement('div');
+  card.className = 'member-card';
+  card.id = 'member-' + id;
+
+  card.innerHTML = `
+    <p class="member-num">Family Member #${id}</p>
+    <button class="remove-btn" onclick="removeMember(${id})" title="Remove member">✕</button>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="First name"/>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Last name"/>
+      </div>
+    </div>
+
+    <div class="form-row-3">
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="date" id="dob-${id}" onchange="autoAge(${id})"/>
+      </div>
+      <div class="form-group">
+        <label>Age Group &amp; Cost</label>
+        <select id="age-${id}" onchange="calcCosts()">
+          <option value="">-- Select Age Group --</option>
+          <option value="adult">25 & older — $200</option>
+          <option value="youth">Ages 6–24 — $25</option>
+          <option value="child">Under 6 — FREE 🎉</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>T-Shirt Size</label>
+        <select id="shirt-${id}">
+          ${SHIRT_SIZES.map(s => `<option value="${s}">${s}</option>`).join('')}
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row-3">
+      <div class="form-group">
+        <label>🎂 Birthday <span style="font-weight:400;text-transform:none;letter-spacing:0;color:#888;">(auto-filled from DOB)</span></label>
+        <input type="text" id="bday-${id}" placeholder="Enter date of birth above" readonly style="background:#f0f4f8;color:#5a6a7c;cursor:default;"/>
+      </div>
+      <div class="form-group">
+        <label>Anniversary</label>
+        <input type="text" placeholder="e.g. June 15"/>
+      </div>
+      <div class="form-group">
+        <label>Milestone / Other</label>
+        <input type="text" placeholder="e.g. Graduation 2026"/>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Meal Preference</label>
+        <select>
+          <option>No preference — I eat everything!</option>
+          <option>Vegetarian</option>
+          <option>Vegan</option>
+          <option>Gluten-Free</option>
+          <option>Food Allergy (note in group field)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Relationship to Contact</label>
+        <input type="text" placeholder="e.g. Spouse, Child, Parent"/>
+      </div>
+    </div>
+  `;
+
+  list.appendChild(card);
+  calcCosts();
+}
+
+function autoAge(id) {
+  const dobInput = document.getElementById('dob-' + id);
+  const ageSelect = document.getElementById('age-' + id);
+  const bdayField = document.getElementById('bday-' + id);
+  if (!dobInput.value) return;
+
+  // Parse date parts directly to avoid timezone-shift issues
+  const [yr, mo, dy] = dobInput.value.split('-').map(Number);
+  const dob = new Date(yr, mo - 1, dy);
+
+  // Auto-fill birthday display field e.g. "July 4"
+  if (bdayField) {
+    bdayField.value = dob.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+  }
+
+  // Calculate age as of reunion start date
+  const reunion = new Date(2026, 4, 22); // May 22 2026
+  let age = reunion.getFullYear() - dob.getFullYear();
+  const m = reunion.getMonth() - dob.getMonth();
+  if (m < 0 || (m === 0 && reunion.getDate() < dob.getDate())) age--;
+  if (age >= 25) ageSelect.value = 'adult';
+  else if (age >= 6) ageSelect.value = 'youth';
+  else ageSelect.value = 'child';
+  calcCosts();
+}
+
+function removeMember(id) {
+  const card = document.getElementById('member-' + id);
+  if (card) card.remove();
+  calcCosts();
+}
+
+function calcCosts() {
+  let adults = 0, youth = 0, children = 0;
+  document.querySelectorAll('[id^="age-"]').forEach(sel => {
+    if (sel.value === 'adult') adults++;
+    else if (sel.value === 'youth') youth++;
+    else if (sel.value === 'child') children++;
+  });
+  const total = (adults * 200) + (youth * 25);
+  document.getElementById('adultLabel').textContent = `Adults (25+): ${adults}`;
+  document.getElementById('youthLabel').textContent = `Youth (6–24): ${youth}`;
+  document.getElementById('childLabel').textContent = `Little Ones (under 6): ${children}`;
+  document.getElementById('adultCost').textContent  = `$${(adults * 200).toLocaleString()}`;
+  document.getElementById('youthCost').textContent  = `$${(youth * 25).toLocaleString()}`;
+  document.getElementById('totalCost').textContent  = `$${total.toLocaleString()}`;
+}
+
+// Start with one member
+addMember();
+
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
