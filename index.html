@@ -177,10 +177,11 @@ footer .tagline-footer{font-family:'Libre Baskerville',serif;font-style:italic;c
 <!-- Top-of-page payment access -->
 <div class="pay-quick-access">
   <p class="pay-quick-access__text">Already registered? Pay your dues here</p>
-  <a 
-    class="pay-quick-access__button" 
-    href="https://www.paypal.com/ncp/payment/5QPQWSTDUESHC" 
+  <a
+    class="pay-quick-access__button"
+    href="https://www.paypal.com/ncp/payment/5QPQWSTDUESHC"
     target="_blank"
+    rel="noopener noreferrer"
   >
     💳 Pay Reunion Dues
   </a>
@@ -190,6 +191,8 @@ footer .tagline-footer{font-family:'Libre Baskerville',serif;font-style:italic;c
   .pay-quick-access {
     text-align: center;
     margin: 14px auto 22px;
+    position: relative;
+    z-index: 10;
   }
 
   .pay-quick-access__text {
@@ -211,6 +214,9 @@ footer .tagline-footer{font-family:'Libre Baskerville',serif;font-style:italic;c
     font-size: 0.95rem;
     font-weight: 600;
     transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 11;
   }
 
   .pay-quick-access__button:hover {
